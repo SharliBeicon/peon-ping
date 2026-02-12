@@ -1,5 +1,4 @@
 {
-  "active_pack": "peon",
   "volume": 0.5,
   "enabled": true,
   "categories": {
@@ -12,6 +11,5 @@
     "annoyed": true
   },
   "annoyed_threshold": 3,
-  "annoyed_window_seconds": 10,
-  "pack_rotation": []
+  "annoyed_window_seconds": 10
 }

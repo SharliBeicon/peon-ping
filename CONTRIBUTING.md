@@ -71,7 +71,7 @@ Map your sounds to categories. See `packs/peon/manifest.json` for the full examp
 
 | Category | When it plays |
 |---|---|
-| `greeting` | Session starts (`$ claude`) |
+| `greeting` | Session starts (`$ opencode`) |
 | `acknowledge` | Claude acknowledges a task |
 | `complete` | Claude finishes and is idle |
 | `error` | Something fails |
@@ -86,7 +86,7 @@ Not every category is required — just include the ones you have sounds for.
 Add your pack name to the `PACKS` variable:
 
 ```bash
-PACKS="peon ra2_soviet_engineer my_pack"
+PACKS="peon my_pack"
 ```
 
 ### 4. Bump the version
@@ -99,29 +99,9 @@ We use [semver](https://semver.org/). Edit the `VERSION` file in the repo root:
 
 Users with an older version will see an update notice on session start.
 
-### 5. Add web audio (optional)
-
-If you want your sounds playable on the landing page, copy them to `docs/audio/`.
-
-### 6. Submit a PR
+### 5. Submit a PR
 
 That's it. We'll review and merge.
-
-## Generate a preview video
-
-There's a [Remotion](https://remotion.dev) project in `video/` that generates a terminal-style preview video showing a simulated Claude Code session with your sounds.
-
-1. Copy your sound files to `video/public/sounds/`
-2. Edit `video/src/SovietEngineerPreview.tsx` — update the `TIMELINE` array with your sounds, quotes, and categories
-3. Install deps and render:
-
-```bash
-cd video
-npm install
-npx remotion render src/index.ts SovietEngineerPreview out/my-pack-preview.mp4
-```
-
-The video shows typed commands in a terminal with your sounds playing at each hook event.
 
 ## Automate pack creation
 
@@ -154,7 +134,7 @@ ffmpeg -i your_audio.mp3 -ss 2.0 -to 4.8 -c copy packs/my_pack/sounds/Quote2.mp3
 
 4. Map the clips to categories in `manifest.json` and you're done.
 
-This is how the StarCraft Battlecruiser and Kerrigan packs were created — one source audio file, transcribed, split, and mapped in minutes.
+This is a fast way to create packs from a single source audio file.
 
 ## Pack ideas
 
